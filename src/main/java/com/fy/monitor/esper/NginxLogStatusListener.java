@@ -22,7 +22,6 @@ public class NginxLogStatusListener implements UpdateListener {
     public String   dbName   = "nginxlog";
 
     public NginxLogStatusListener() {
-        influxDB.createDatabase(dbName);
         influxDB.enableBatch(2000, 100, TimeUnit.MILLISECONDS);
     }
 

@@ -24,7 +24,7 @@ public class EsperTest {
 
         String product = NginxLogJSON.class.getName();
 
-        String epl = "select status, count(*) from " + product + ".win:time_batch(1 sec)  group by status";
+        String epl = "select status, count(*) as count from " + product + ".win:time_batch(1 sec)  group by status";
 
         EPStatement state = admin.createEPL(epl);
         state.addListener(new NginxLogStatusListener());
@@ -39,26 +39,26 @@ public class EsperTest {
 
             EsperAnalyzeEngine.execut(apple1);
         }
-        NginxLogJSON apple1 = new NginxLogJSON();
-        apple1.setRequest("a");
-        apple1.setStatus("200");
-
-        runtime.sendEvent(apple1);
-
-        NginxLogJSON apple2 = new NginxLogJSON();
-        apple2.setRequest("a");
-        apple2.setStatus("300");
-        runtime.sendEvent(apple2);
-
-        NginxLogJSON apple3 = new NginxLogJSON();
-        apple3.setRequest("a");
-        apple3.setStatus("400");
-        runtime.sendEvent(apple3);
-
-        NginxLogJSON apple4 = new NginxLogJSON();
-        apple3.setRequest("a");
-        apple4.setStatus("400");
-        runtime.sendEvent(apple4);
+        // NginxLogJSON apple1 = new NginxLogJSON();
+        // apple1.setRequest("a");
+        // apple1.setStatus("200");
+        //
+        // runtime.sendEvent(apple1);
+        //
+        // NginxLogJSON apple2 = new NginxLogJSON();
+        // apple2.setRequest("a");
+        // apple2.setStatus("300");
+        // runtime.sendEvent(apple2);
+        //
+        // NginxLogJSON apple3 = new NginxLogJSON();
+        // apple3.setRequest("a");
+        // apple3.setStatus("400");
+        // runtime.sendEvent(apple3);
+        //
+        // NginxLogJSON apple4 = new NginxLogJSON();
+        // apple3.setRequest("a");
+        // apple4.setStatus("400");
+        // runtime.sendEvent(apple4);
 
         // EsperAnalyzeEngine.execut(apple1);
         //
